@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from 'react-leaflet';
 import L from 'leaflet';
 import { v4 as uuidv4 } from 'uuid';
+import logo from './logo.jpg';
 import './App.css';
 
 // Fix for default markers in react-leaflet
@@ -219,7 +220,10 @@ function App() {
   return (
     <div className="App">
       <header className="app-header">
-        <h1> My World Explorer!</h1>
+        <div className="header-content">
+          <img src={logo} alt="World Explorer Logo" className="app-logo" />
+          <h1>My World Explorer!</h1>
+        </div>
         <div className="controls">
           {isAddingLocations ? (
             <>
