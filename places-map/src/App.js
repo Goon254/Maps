@@ -57,6 +57,7 @@ function LocationModal({ isOpen, onClose, onSave, position }) {
 
   if (!isOpen) return null;
 
+//Form for user to add location details where they have been to
   return (
     <div className="modal-overlay">
       <div className="modal-content">
@@ -165,10 +166,10 @@ function LocationList({ locations, isVisible, onToggleVisibility }) {
               </span>
             </div>
             {location.description && <p className="location-description">{location.description}</p>}
-            {location.years && <p className="location-years">📅 {location.years}</p>}
-            {location.notes && <p className="location-notes">📝 {location.notes}</p>}
+            {location.years && <p className="location-years">{location.years}</p>}
+            {location.notes && <p className="location-notes">{location.notes}</p>}
             <p className="location-coords">
-              📍 {location.position.lat.toFixed(4)}, {location.position.lng.toFixed(4)}
+               {location.position.lat.toFixed(4)}, {location.position.lng.toFixed(4)}
             </p>
           </div>
         ))}
@@ -218,7 +219,7 @@ function App() {
   return (
     <div className="App">
       <header className="app-header">
-        <h1>🗺️ Oh, the places you've been!</h1>
+        <h1> My World Explorer!</h1>
         <div className="controls">
           {isAddingLocations ? (
             <>
